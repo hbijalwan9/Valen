@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Baby Khyati 💖</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    body {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #a1c4fd 100%);
+        font-family: 'Georgia', serif;
+        position: relative;
+    }
+
+    .scrolling-container {
+        height: 100vh;
+        width: 100vw;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        /* Remove scrollbar for cleaner look */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .scrolling-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        flex-shrink: 0;
+        /* Fixed: Ensures exact 100vh with no gaps */
+        margin: 0;
+        border: none;
+    }
+
+    /* ADDED: Extra spacing specifically for Page 1 */
+    #page1 {
+        margin-bottom: 50px; /* Adds gap between page 1 and 2 */
+    }
+
+    /* ADDED: Extra spacing specifically for Page 3 */
+    #page3 {
+        margin-bottom: 50px; /* Adds gap between page 3 and 4 */
+    }
+
+    /* Page Navigation */
+    .page-nav {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 25px 15px;
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(230, 57, 70, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .nav-dot.active {
+        background: #e63946;
+        transform: scale(1.3);
+        border-color: white;
+    }
+
+    .nav-dot:hover {
+        transform: scale(1.2);
+        background: #ff7b9c;
+    }
+
+    /* Page 1: Proposal Card */
+    .card {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 30px;
+        border-radius: 30px;
+        text-align: center;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        z-index: 10;
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        animation: cardAppear 1.5s ease-out;
+        margin: 0;
+    }
+
+    @keyframes cardAppear {
+        0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    h1 {
+        color: #e63946;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: inline-block;
+    }
+
+    h1:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 25%;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(to right, transparent, #e63946, transparent);
+    }
+
+    .valentine-question {
+        color: #e63946;
+        font-size: 2rem;
+        margin: 25px 0;
+        padding: 15px;
+        background: linear-gradient(135deg, rgba(255, 154, 158, 0.1), rgba(250, 208, 196, 0.1));
+        border-radius: 15px;
+        border: 2px dashed #e63946;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
+    }
+
+    .message {
+        color: #444;
+        font-size: 1.1rem;
+        margin: 25px 0;
+        line-height: 1.8;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .message p {
+        margin-bottom: 15px;
+    }
+
+    .highlight {
+        color: #e63946;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        padding: 14px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        letter-spacing: 1px;
+        min-width: 140px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #yesBtn {
+        background: linear-gradient(to right, #e63946, #ff7b9c);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #yesBtn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+    }
+
+    #yesBtn:after {
+        content: '💖';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+    }
+
+    #noBtn {
+        background: linear-gradient(to right, #ddd, #f0f0f0);
+        color: #555;
+        position: relative;
+        transition: all 0.1s ease;
+    }
+
+    #noBtn:hover {
+        transform: scale(0.95);
+    }
+
+    /* Page 2: Love Letter */
+    .love-letter {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 30px;
+        border-radius: 30px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        animation: fadeIn 1s ease-out;
+        margin: 0;
+        /* ADDED: Extra margin-top to create space from page 1 */
+        margin-top: 50px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .letter-content {
+        color: #444;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        max-height: 60vh;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    .letter-content p {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .letter-signature {
+        text-align: right;
+        margin-top: 30px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2rem;
+        color: #e63946;
+    }
+
+    /* Page 3: Photo Gallery */
+    .photo-gallery {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px 25px;
+        border-radius: 30px;
+        max-width: 1000px;
+        width: 95%;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        text-align: center;
+        margin: 0;
+    }
+
+    .photo-gallery h2 {
+        color: #e63946;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+    }
+
+    .photo-instruction {
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        background: rgba(255, 154, 158, 0.1);
+        padding: 12px 20px;
+        border-radius: 15px;
+        display: inline-block;
+    }
+
+    .photo-counter {
+        color: #e63946;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        padding: 8px 20px;
+        background: rgba(255, 154, 158, 0.1);
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    .max-limit-message {
+        color: #e63946;
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 1rem;
+        background: rgba(230, 57, 70, 0.1);
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .photos-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 20px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        justify-items: center;
+        align-items: center;
+        min-height: 400px;
+    }
+
+    .photo-item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 280px;
+        width: 280px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border: 4px solid transparent;
+    }
+
+    .photo-item:hover {
+        transform: scale(1.05);
+        border-color: #e63946;
+        box-shadow: 0 12px 30px rgba(230, 57, 70, 0.2);
+    }
+
+    .photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .photo-placeholder {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        border-radius: 20px;
+        height: 280px;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #e63946;
+        font-size: 3.5rem;
+        transition: all 0.3s ease;
+        border: 4px dashed #e63946;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .photo-placeholder:before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: rotate(45deg);
+        animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+        0% { transform: rotate(45deg) translateX(-100%); }
+        100% { transform: rotate(45deg) translateX(100%); }
+    }
+
+    .photo-placeholder:hover:not(.disabled) {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #ff7b9c, #fad0c4);
+        border-color: #ff7b9c;
+        box-shadow: 0 12px 30px rgba(255, 123, 156, 0.3);
+    }
+
+    .photo-placeholder.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        border: 4px dashed #cccccc;
+        background: linear-gradient(135deg, #eeeeee, #f5f5f5);
+        color: #cccccc;
+    }
+
+    .photo-placeholder.disabled:before {
+        display: none;
+    }
+
+    .photo-placeholder span {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        color: #e63946;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 5px 15px;
+        border-radius: 20px;
+    }
+
+    .photo-placeholder.disabled span {
+        color: #cccccc;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .delete-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(230, 57, 70, 0.95);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        z-index: 10;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-item:hover .delete-btn {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .delete-btn:hover {
+        background: #e63946;
+        transform: scale(1.2);
+        box-shadow: 0 6px 15px rgba(230, 57, 70, 0.4);
+    }
+
+    /* Page 4: Sorry Page */
+    .sorry-page {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 30px;
+        border-radius: 30px;
+        max-width: 700px;
+        width: 90%;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+        margin: 0;
+        /* ADDED: Extra margin-top to create space from page 3 */
+        margin-top: 50px;
+    }
+
+    .sorry-page h2 {
+        color: #e63946;
+        margin-bottom: 25px;
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .sorry-content {
+        color: #444;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        max-height: 60vh;
+        overflow-y: auto;
+        padding-right: 10px;
+        text-align: justify;
+        background: linear-gradient(135deg, rgba(255, 154, 158, 0.05), rgba(250, 208, 196, 0.05));
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(230, 57, 70, 0.1);
+    }
+
+    .sorry-content p {
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .sorry-content p:before {
+        content: '💔';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .tear-drop {
+        display: inline-block;
+        animation: tearFall 2s infinite;
+        margin: 0 5px;
+    }
+
+    @keyframes tearFall {
+        0%, 100% { transform: translateY(0); opacity: 0.7; }
+        50% { transform: translateY(5px); opacity: 1; }
+    }
+
+    .forgive-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+    }
+
+    .forgive-btn {
+        padding: 15px 35px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        letter-spacing: 1px;
+        min-width: 160px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #forgiveBtn {
+        background: linear-gradient(to right, #4CAF50, #45a049);
+        color: white;
+    }
+
+    #forgiveBtn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    #forgiveBtn:after {
+        content: '💚';
+    }
+
+    #stillThinkingBtn {
+        background: linear-gradient(to right, #ff9800, #ff8c00);
+        color: white;
+    }
+
+    #stillThinkingBtn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+    }
+
+    .sorry-highlight {
+        color: #e63946;
+        font-weight: bold;
+        font-size: 1.3rem;
+        background: rgba(230, 57, 70, 0.1);
+        padding: 5px 10px;
+        border-radius: 10px;
+        margin: 0 5px;
+    }
+
+    /* Floating Elements */
+    .heart {
+        position: fixed;
+        font-size: 28px;
+        opacity: 0;
+        z-index: 1;
+        animation: floatUp 6s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .special-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.98);
+        padding: 50px 30px;
+        border-radius: 30px;
+        text-align: center;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 90%;
+        z-index: 1000;
+        display: none;
+        animation: messageAppear 1s ease-out;
+    }
+
+    @keyframes messageAppear {
+        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+        100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .special-message h2 {
+        color: #e63946;
+        margin-bottom: 25px;
+        font-size: 2.2rem;
+    }
+
+    .special-message p {
+        color: #333;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .signature {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+        color: #e63946;
+        margin-top: 30px;
+    }
+
+    .close-btn {
+        background: #e63946;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .photos-container {
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .photo-item, .photo-placeholder {
+            height: 220px;
+            width: 220px;
+        }
+        
+        .photo-placeholder {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-nav {
+            right: 15px;
+            padding: 20px 12px;
+        }
+        
+        .card, .love-letter, .photo-gallery, .sorry-page {
+            padding: 25px 20px;
+            width: 95%;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .valentine-question {
+            font-size: 1.6rem;
+            padding: 12px;
+        }
+        
+        .buttons, .forgive-buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        button, .forgive-btn {
+            width: 100%;
+            max-width: 250px;
+        }
+        
+        .photos-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .photo-item, .photo-placeholder {
+            height: 160px;
+            width: 160px;
+        }
+        
+        .photo-placeholder {
+            font-size: 2.5rem;
+        }
+        
+        .photo-placeholder span {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+        
+        .delete-btn {
+            width: 32px;
+            height: 32px;
+            font-size: 1.3rem;
+        }
+        
+        .letter-content, .sorry-content {
+            max-height: 55vh;
+        }
+        
+        .sorry-page h2 {
+            font-size: 2rem;
+        }
+        
+        .photo-gallery {
+            max-width: 95%;
+        }
+        
+        .photo-instruction {
+            font-size: 1rem;
+            padding: 10px 15px;
+        }
+        
+        /* Adjust gap for mobile */
+        #page1 {
+            margin-bottom: 30px;
+        }
+        
+        #page3 {
+            margin-bottom: 30px;
+        }
+        
+        .love-letter {
+            margin-top: 30px;
+        }
+        
+        .sorry-page {
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .photos-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .photo-item, .photo-placeholder {
+            height: 110px;
+            width: 110px;
+        }
+        
+        .photo-placeholder {
+            font-size: 2rem;
+        }
+        
+        .photo-placeholder span {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            padding: 3px 8px;
+        }
+        
+        .delete-btn {
+            width: 28px;
+            height: 28px;
+            font-size: 1.2rem;
+            top: 8px;
+            right: 8px;
+        }
+        
+        /* Adjust gap for small mobile */
+        #page1 {
+            margin-bottom: 20px;
+        }
+        
+        #page3 {
+            margin-bottom: 20px;
+        }
+        
+        .love-letter {
+            margin-top: 20px;
+        }
+        
+        .sorry-page {
+            margin-top: 20px;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="scrolling-container" id="scrollingContainer">
+    <!-- Page 1: Proposal -->
+    <div class="page" id="page1">
+        <div class="card">
+            <h1>My Dearest Khyati 💖</h1>
+            
+            <div class="message">
+                <p>From the moment you came into my life, everything changed.</p>
+                <p>Your smile brightens my darkest days, your laughter is my favorite melody, and your love is the most beautiful gift I've ever received.</p>
+                <p class="highlight">You are my sunshine, my happy place, and my greatest adventure.</p>
+            </div>
+            
+            <div class="valentine-question">
+                💝 Will you be my Valentine? 💝
+            </div>
+            
+            <div class="buttons">
+                <button id="yesBtn" onclick="yesClicked()">Absolutely Yes! 💕</button>
+                <button id="noBtn" onmouseover="moveNo()" onclick="showMemory()">Let me think... 🌹</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2: Love Letter -->
+    <div class="page" id="page2">
+        <div class="love-letter">
+            <h2 style="color: #e63946; text-align: center; margin-bottom: 30px;">My Love Letter to You 💌</h2>
+            <div class="letter-content">
+                <p>My Dearest Khyati,</p>
+                
+                <p>It's a bit blurry but even though I remember the feeling looking at you and seeing this beautiful girl. (In LKG as far as I remember) We were so little then, but my heart somehow knew even back then that you were special.</p>
+                
+                <p>I was in love with you the day I saw you, baby. I have loved you for what seems like a thousand years. Every memory with you is etched in my heart - from our childhood days to the beautiful woman you've become.</p>
+                
+                <p>I remember our first date when I came to pick you up in our "tun tun" and I even had a conversation with Akku didi. You were wearing that blue shirt (which you don't seem to like very much now 😅), but to me, you looked absolutely perfect. That day was just the beginning of our beautiful journey.</p>
+                
+                <p>I love when you're telling me about your day, even when you're nagging about it. I love your smile, the way you look at me, how you get excited over little things. I just love every single thing about you.</p>
+                
+                <p>With you, I've found my best friend, my safe place, my inspiration, and my home. You're not just my love - you're my everything.</p>
+                
+                <p>Forever and always,</p>
+            </div>
+            <div class="letter-signature">Your Love 💘</div>
+        </div>
+    </div>
+    
+    <!-- Page 3: Photo Gallery -->
+    <div class="page" id="page3">
+        <div class="photo-gallery">
+            <h2>Our Beautiful Memories 📸</h2>
+            <p class="photo-instruction">📷 Click on any photo box below to add your photos</p>
+            
+            <div class="photo-counter" id="photoCounter">
+                Photos: <span id="currentCount">0</span>/3
+            </div>
+            
+            <div class="photos-container" id="photosContainer">
+                <!-- Photo boxes - will be replaced with uploaded ones -->
+                <div class="photo-placeholder" onclick="handlePlaceholderClick()">
+                    <div>📷</div>
+                    <span>Click to add</span>
+                </div>
+                <div class="photo-placeholder" onclick="handlePlaceholderClick()">
+                    <div>❤️</div>
+                    <span>Click to add</span>
+                </div>
+                <div class="photo-placeholder" onclick="handlePlaceholderClick()">
+                    <div>✨</div>
+                    <span>Click to add</span>
+                </div>
+            </div>
+            
+            <div class="max-limit-message" id="maxLimitMessage" style="display: none;">
+                ⚠️ Maximum 3 photos reached. Delete one to add more.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 4: Sorry Page -->
+    <div class="page" id="page4">
+        <div class="sorry-page">
+            <h2>💔 Baby, I'm So Sorry 💔</h2>
+            
+            <div class="sorry-content">
+                <p>My dearest Khyati,</p>
+                
+                <p>I need to say this from the bottom of my heart: <span class="sorry-highlight">I am truly, deeply sorry</span> for all the wrongs I have done. Every single tear you've shed because of me haunts me every day.</p>
+                
+                <p>I'm sorry for every argument, every misunderstanding, every time my words or actions hurt you. I'm sorry for not being more patient, for not understanding your feelings better, for not being the perfect partner you deserve.</p>
+                
+                <p>I hate that I've made you cry <span class="tear-drop">💧</span> - those tears are like knives to my heart. I hate that I've caused you pain when all I ever want to do is make you happy. You're the most precious person in my life, and the thought that I've hurt you fills me with regret.</p>
+                
+                <p>For every time I raised my voice, for every time I was stubborn, for every time I didn't listen properly - I'm so sorry. For the times I was selfish, for the times I put my ego before your feelings, for every moment I failed to appreciate how amazing you are - please forgive me.</p>
+                
+                <p>You deserve nothing but love, respect, and happiness. I promise to work every single day to be better for you. I promise to listen more, understand more, and love you better. I want to be the person who brings only smiles to your beautiful face, not tears.</p>
+                
+                <p>Please find it in your heart to forgive me. I can't imagine my life without you, and I'll do whatever it takes to make things right.</p>
+                
+                <p>With all my love and deepest regret,</p>
+            </div>
+            
+            <div class="forgive-buttons">
+                <button class="forgive-btn" id="forgiveBtn" onclick="forgiveClicked()">I Forgive You 💚</button>
+                <button class="forgive-btn" id="stillThinkingBtn" onmouseover="moveThinkingBtn()" onclick="showPromise()">I Need Time 🤍</button>
+            </div>
+            
+            <button onclick="scrollToTop()" style="display: block; margin: 30px auto 0; background: #e63946; color: white; padding: 12px 25px; border: none; border-radius: 50px; cursor: pointer; font-size: 1rem;">
+                Back to Proposal 💕
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Special Message -->
+<div class="special-message" id="specialMessage">
+    <h2>Khyati, My Love ❤️</h2>
+    <p>You saying "Yes" is the best thing that could ever happen to me.</p>
+    <p>I promise to cherish you, support you, and love you more with each passing day.</p>
+    <p>Our journey together is just beginning, and I can't wait to make countless beautiful memories with you.</p>
+    <p>You are my everything. Happy Valentine's Day, my love! ✨</p>
+    <div class="signature">With all my love,<br>Your Valentine 💘</div>
+    <button class="close-btn" onclick="closeMessage()">Close</button>
+</div>
+
+<!-- Forgive Message -->
+<div class="special-message" id="forgiveMessage">
+    <h2>Thank You, My Love 💚</h2>
+    <p>Your forgiveness means the world to me. I promise to never take your love for granted.</p>
+    <p>From today onward, I'll be better - more patient, more understanding, more loving.</p>
+    <p>You are the greatest gift in my life, and I'll spend forever making it up to you.</p>
+    <p>Thank you for giving me another chance. I love you more than words can express. 🌹</p>
+    <div class="signature">Forever yours,<br>Your Repentant Love 💘</div>
+    <button class="close-btn" onclick="closeForgiveMessage()">Close</button>
+</div>
+
+<!-- Navigation -->
+<div class="page-nav" id="pageNav">
+    <!-- Dots will be added dynamically -->
+</div>
+
+<input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+
+<script>
+    // Current page index
+    let currentPage = 0;
+    const totalPages = 4;
+    const scrollingContainer = document.getElementById('scrollingContainer');
+    const pageNav = document.getElementById('pageNav');
+    const photosContainer = document.getElementById('photosContainer');
+    const fileInput = document.getElementById('fileInput');
+    const photoCounter = document.getElementById('photoCounter');
+    const currentCount = document.getElementById('currentCount');
+    const maxLimitMessage = document.getElementById('maxLimitMessage');
+
+    // Array to store uploaded photos - MAX 3 PHOTOS
+    let uploadedPhotos = [];
+    const MAX_PHOTOS = 3;
+
+    // Create navigation dots
+    function createNavigation() {
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            dot.dataset.page = i;
+            dot.addEventListener('click', () => scrollToPage(i));
+            pageNav.appendChild(dot);
+        }
+        updateNavigation();
+    }
+
+    // Update active dot based on scroll position
+    function updateNavigation() {
+        const scrollPosition = scrollingContainer.scrollTop;
+        const pageHeight = window.innerHeight;
+        currentPage = Math.round(scrollPosition / pageHeight);
+        
+        // Ensure we stay within bounds
+        if (currentPage < 0) currentPage = 0;
+        if (currentPage >= totalPages) currentPage = totalPages - 1;
+        
+        const dots = document.querySelectorAll('.nav-dot');
+        dots.forEach((dot, index) => {
+            if (index === currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Scroll to specific page
+    function scrollToPage(pageIndex) {
+        currentPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
+        const pageHeight = window.innerHeight;
+        scrollingContainer.scrollTo({
+            top: currentPage * pageHeight,
+            behavior: 'smooth'
+        });
+        updateNavigation();
+    }
+
+    // Scroll to top
+    function scrollToTop() {
+        scrollToPage(0);
+    }
+
+    // Update navigation on scroll
+    scrollingContainer.addEventListener('scroll', updateNavigation);
+
+    // Handle placeholder click
+    function handlePlaceholderClick() {
+        if (uploadedPhotos.length < MAX_PHOTOS) {
+            fileInput.click();
+        } else {
+            showMaxLimitWarning();
+        }
+    }
+
+    // File upload functionality
+    fileInput.addEventListener('change', function(e) {
+        const files = e.target.files;
+        
+        if (files.length > 0) {
+            // Check if adding these files would exceed the limit
+            const availableSlots = MAX_PHOTOS - uploadedPhotos.length;
+            const filesToAdd = Math.min(files.length, availableSlots);
+            
+            if (filesToAdd === 0) {
+                showMaxLimitWarning();
+                fileInput.value = '';
+                return;
+            }
+            
+            // Show a sweet message
+            showUploadMessage();
+            
+            // Process each file (limited to available slots)
+            let processedCount = 0;
+            Array.from(files).forEach((file, index) => {
+                if (processedCount >= filesToAdd) return;
+                
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        // Add photo to array
+                        uploadedPhotos.push({
+                            id: Date.now() + index,
+                            src: e.target.result,
+                            name: file.name
+                        });
+                        
+                        processedCount++;
+                        
+                        if (processedCount === filesToAdd) {
+                            // Update gallery
+                            updateGallery();
+                            
+                            // Show success effect
+                            showPhotoSuccessEffect();
+                            
+                            // Check if we should show warning for extra files
+                            if (files.length > filesToAdd) {
+                                showExtraFilesWarning(files.length - filesToAdd);
+                            }
+                        }
+                    };
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Reset file input
+            fileInput.value = '';
+        }
+    });
+
+    // Update photo gallery
+    function updateGallery() {
+        // Clear existing content
+        photosContainer.innerHTML = '';
+        
+        // Add uploaded photos
+        uploadedPhotos.forEach((photo, index) => {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-item';
+            photoItem.innerHTML = `
+                <img src="${photo.src}" alt="Our memory ${index + 1}">
+                <button class="delete-btn" onclick="deletePhoto(${photo.id})">×</button>
+            `;
+            photosContainer.appendChild(photoItem);
+        });
+        
+        // Add remaining placeholders (max 3 total)
+        const remainingSlots = Math.max(0, MAX_PHOTOS - uploadedPhotos.length);
+        for (let i = 0; i < remainingSlots; i++) {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'photo-placeholder';
+            placeholder.innerHTML = `
+                <div>${getPlaceholderEmoji(i)}</div>
+                <span>Click to add</span>
+            `;
+            placeholder.onclick = handlePlaceholderClick;
+            photosContainer.appendChild(placeholder);
+        }
+        
+        // Update counter
+        currentCount.textContent = uploadedPhotos.length;
+        
+        // Update max limit message
+        if (uploadedPhotos.length >= MAX_PHOTOS) {
+            maxLimitMessage.style.display = 'block';
+            
+            // Disable all placeholders
+            document.querySelectorAll('.photo-placeholder').forEach(p => {
+                p.classList.add('disabled');
+                p.onclick = null;
+            });
+        } else {
+            maxLimitMessage.style.display = 'none';
+            
+            // Enable all placeholders
+            document.querySelectorAll('.photo-placeholder').forEach(p => {
+                p.classList.remove('disabled');
+                p.onclick = handlePlaceholderClick;
+            });
+        }
+    }
+
+    // Get placeholder emoji based on index
+    function getPlaceholderEmoji(index) {
+        const emojis = ['📷', '❤️', '✨'];
+        return emojis[index % emojis.length];
+    }
+
+    // Delete photo
+    function deletePhoto(photoId) {
+        uploadedPhotos = uploadedPhotos.filter(photo => photo.id !== photoId);
+        updateGallery();
+        
+        // Show delete effect
+        showDeleteEffect();
+        
+        // If we were at max and now have space, show a message
+        if (uploadedPhotos.length === MAX_PHOTOS - 1) {
+            showSpaceAvailableMessage();
+        }
+    }
+
+    // Show upload success message
+    function showUploadMessage() {
+        // Create floating heart effect
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                const heart = document.createElement("div");
+                heart.textContent = "💖";
+                heart.style.cssText = `
+                    position: fixed;
+                    font-size: 30px;
+                    left: ${Math.random() * 100}vw;
+                    top: ${Math.random() * 100}vh;
+                    opacity: 0.8;
+                    animation: floatHeart ${Math.random() * 2 + 1}s ease-out forwards;
+                    pointer-events: none;
+                    z-index: 999;
+                `;
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }, i * 100);
+        }
+    }
+
+    // Show max limit warning
+    function showMaxLimitWarning() {
+        const warning = document.createElement("div");
+        warning.textContent = "⚠️ Maximum 3 photos!";
+        warning.style.cssText = `
+            position: fixed;
+            font-size: 24px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(230, 57, 70, 0.9);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            z-index: 1000;
+            animation: warningPulse 0.5s ease-in-out 3;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(warning);
+        setTimeout(() => warning.remove(), 1500);
+    }
+
+    // Show extra files warning
+    function showExtraFilesWarning(extraCount) {
+        const warning = document.createElement("div");
+        warning.textContent = `⚠️ Only added ${MAX_PHOTOS - uploadedPhotos.length} photo(s). ${extraCount} extra skipped.`;
+        warning.style.cssText = `
+            position: fixed;
+            font-size: 20px;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 152, 0, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            z-index: 1000;
+            animation: extraWarningSlide 2s ease-out forwards;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        `;
+        document.body.appendChild(warning);
+        setTimeout(() => warning.remove(), 2000);
+    }
+
+    // Show space available message
+    function showSpaceAvailableMessage() {
+        const message = document.createElement("div");
+        message.textContent = "✨ Space available for more photos!";
+        message.style.cssText = `
+            position: fixed;
+            font-size: 20px;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            z-index: 1000;
+            animation: spaceMessageSlide 2s ease-out forwards;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        `;
+        document.body.appendChild(message);
+        setTimeout(() => message.remove(), 2000);
+    }
+
+    // Show photo success effect
+    function showPhotoSuccessEffect() {
+        const sparkle = document.createElement("div");
+        sparkle.textContent = "✨";
+        sparkle.style.cssText = `
+            position: fixed;
+            font-size: 40px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: sparkleEffect 1s ease-out forwards;
+            pointer-events: none;
+            z-index: 999;
+        `;
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1000);
+    }
+
+    // Show delete effect
+    function showDeleteEffect() {
+        const brokenHeart = document.createElement("div");
+        brokenHeart.textContent = "💔";
+        brokenHeart.style.cssText = `
+            position: fixed;
+            font-size: 40px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: deleteEffect 1s ease-out forwards;
+            pointer-events: none;
+            z-index: 999;
+        `;
+        document.body.appendChild(brokenHeart);
+        setTimeout(() => brokenHeart.remove(), 1000);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') scrollToPage(Math.max(0, currentPage - 1));
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') scrollToPage(Math.min(totalPages - 1, currentPage + 1));
+        if (e.key === 'Home') scrollToPage(0);
+        if (e.key === 'End') scrollToPage(totalPages - 1);
+    });
+
+    // Touch/swipe support for vertical scrolling
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].clientY;
+    });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].clientY;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartY - touchEndY;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe up
+                scrollToPage(Math.min(totalPages - 1, currentPage + 1));
+            } else {
+                // Swipe down
+                scrollToPage(Math.max(0, currentPage - 1));
+            }
+        }
+    }
+
+    // Floating elements
+    function createFloatingElements() {
+        const heartEmojis = ["💖", "💕", "💗", "💓", "💞", "❣️", "💘"];
+        
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+                const heart = document.createElement("div");
+                heart.className = "heart";
+                heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+                heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+                heart.style.animationDelay = Math.random() * 2 + "s";
+                document.body.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 6000);
+            }, i * 300);
+        }
+    }
+
+    // Yes button clicked
+    function yesClicked() {
+        for (let i = 0; i < 100; i++) {
+            setTimeout(() => createSparkleBurst(), i * 50);
+        }
+        
+        setTimeout(() => {
+            document.getElementById('specialMessage').style.display = 'block';
+        }, 1000);
+        
+        playRomanticSound();
+    }
+
+    // Move No button when hovered
+    function moveNo() {
+        const btn = document.getElementById("noBtn");
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+        
+        const texts = ["Are you sure?", "Think again!", "Really?", "You don't mean that!", "Give me a chance!", "Please say yes! 💕"];
+        if (Math.random() > 0.7) {
+            btn.textContent = texts[Math.floor(Math.random() * texts.length)];
+        }
+    }
+
+    // Show memory
+    function showMemory() {
+        alert("Remember that time we first met? I knew then you were someone special. Every moment with you since has been magical. 🌟");
+    }
+
+    // Move "I Need Time" button when hovered
+    function moveThinkingBtn() {
+        const btn = document.getElementById("stillThinkingBtn");
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+        
+        const texts = ["I understand...", "Take your time...", "I'll wait forever...", "Please forgive me...", "I'm truly sorry...", "I love you... 💔"];
+        if (Math.random() > 0.7) {
+            btn.textContent = texts[Math.floor(Math.random() * texts.length)];
+        }
+    }
+
+    // Show promise when "I Need Time" is clicked
+    function showPromise() {
+        alert("I understand, baby. I'll wait patiently and work every day to earn your forgiveness. I promise to be better. Take all the time you need. I'll be here, loving you more each day. 💔🤍");
+    }
+
+    // Forgive button clicked
+    function forgiveClicked() {
+        // Create green hearts for forgiveness
+        for (let i = 0; i < 50; i++) {
+            setTimeout(() => {
+                const heart = document.createElement("div");
+                heart.textContent = "💚";
+                heart.style.cssText = `
+                    position: fixed;
+                    font-size: 35px;
+                    left: ${Math.random() * 100}vw;
+                    top: ${Math.random() * 100}vh;
+                    opacity: 0.8;
+                    animation: forgiveHeart ${Math.random() * 2 + 1}s ease-out forwards;
+                    pointer-events: none;
+                    z-index: 999;
+                `;
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }, i * 100);
+        }
+        
+        setTimeout(() => {
+            document.getElementById('forgiveMessage').style.display = 'block';
+        }, 1000);
+    }
+
+    // Close special message
+    function closeMessage() {
+        document.getElementById('specialMessage').style.display = 'none';
+        createFloatingElements();
+    }
+
+    // Close forgive message
+    function closeForgiveMessage() {
+        document.getElementById('forgiveMessage').style.display = 'none';
+        createFloatingElements();
+    }
+
+    // Sparkle burst effect
+    function createSparkleBurst() {
+        const sparkle = document.createElement("div");
+        sparkle.style.cssText = `
+            position: fixed;
+            width: ${Math.random() * 10 + 5}px;
+            height: ${Math.random() * 10 + 5}px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px white;
+            animation: sparkle 2s infinite;
+            left: ${Math.random() * 100}vw;
+            top: ${Math.random() * 100}vh;
+            pointer-events: none;
+            z-index: 999;
+        `;
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 2000);
+    }
+
+    // Add sparkle animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes extraWarningSlide {
+            0% { transform: translate(-50%, -50%) translateY(20px); opacity: 0; }
+            20% { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+            80% { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) translateY(-20px); opacity: 0; }
+        }
+        @keyframes spaceMessageSlide {
+            0% { transform: translate(-50%, -50%) translateY(20px); opacity: 0; }
+            20% { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+            80% { transform: translate(-50%, -50%) translateY(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) translateY(-20px); opacity: 0; }
+        }
+        @keyframes sparkleEffect {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        }
+        @keyframes deleteEffect {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(0.5) rotate(45deg); opacity: 0; }
+        }
+        @keyframes forgiveHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(15deg); opacity: 0; }
+        }
+        @keyframes warningPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(15deg); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Play romantic sound
+    function playRomanticSound() {
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+                const note = document.createElement("div");
+                note.textContent = "🎵";
+                note.style.cssText = `
+                    position: fixed;
+                    font-size: 30px;
+                    left: ${Math.random() * 100}vw;
+                    top: ${Math.random() * 100}vh;
+                    opacity: 0.7;
+                    animation: noteFloat ${Math.random() * 2 + 1}s ease-out forwards;
+                    pointer-events: none;
+                    z-index: 999;
+                `;
+                document.body.appendChild(note);
+                setTimeout(() => note.remove(), 3000);
+            }, i * 150);
+        }
+    }
+
+    // Initialize everything
+    window.onload = function() {
+        createNavigation();
+        createFloatingElements();
+        setInterval(createFloatingElements, 8000);
+        
+        // Ensure first page is visible and properly aligned
+        setTimeout(() => {
+            scrollingContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+        
+        // Initialize gallery
+        updateGallery();
+    };
+</script>
+</body>
+</html>
